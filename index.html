@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java-Script no 5</title>
+    <!-- Boots-strap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Toastify-js -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <header style="background-color: #1d3557;">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand text-light" href="#">Assignment</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navbar-toggler-light"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="#">chapter 21-25</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5">
+                    <h3 class="text-center">Chapter # 21-25 | String &amp; It's Methoods</h3>
+                    <hr>
+                </div>
+            </div>
+            <!-- Input group -->
+            <div class="row mt-4">
+                <div class="col-12 col-md-6">
+                    <h3 class="text-center">Input</h3>
+                    <div class="border border-secondary rounded-3 h-75 p-3 d-flex align-items-center">
+                        <div class="input-group">
+                            <input type="text" id="inputText" class="form-control bg-transparent"
+                                placeholder="Type your text here">
+                            <button class="btn btn-outline-secondary" onclick="clearBtn(this)">Clear</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Original-String -->
+                <div class="col mt-sm-4 mt-md-0 mt-lg-0 mt-4">
+                    <h3 class="text-center align-items-center">Original String</h3>
+                    <div class="border rounded-3 h-75 py-3  align-items-center text-white " id="orignalstring"
+                        style="background-color: #1d3557; ">
+                        <div class="text-center">
+                            I love my country Pakistan <br>
+                            I like my city Faisalabad <br>
+                            I like my Homeland <br>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Buttons and output section -->
+
+
+            <div class="row mt-5">
+                <div class="col-12 mb-4 col-md-6 mb-md-0 h-100">
+                    <h4 class="text-center">Buttons</h4>
+                    <div
+                        class="border border-secondary rounded-3 p-4 px-lg-0 py-lg-3 p-md-3 p-sm-3 d-flex justify-content-center align-items-center">
+                        <div class="buttons text-center">
+
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="lowerCase()">Convert to
+                                Lowercase</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="upperCase()">Convert to
+                                Uppercase</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="capitalize()">Convert to
+                                Capitalize</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="betterFormating()">Better
+                                Formating</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="printCities()">Print all
+                                Cities</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="addCity()">Add Your City in
+                                List</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="checkCity()">Check Your City in
+                                List</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="findWord()">Find This Word</button>
+                            <button class="btn btn-danger col-12 col-sm-12 col-md-12 col-lg-5 mb-1"
+                                onclick="replaceWord()">Replace This
+                                Word</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- output -->
+                <div class="col col-12 col-lg-6 col-md-6 mb-4 col-sm-12">
+                    <h3 class="text-center">Output / Result</h3>
+                    <div class="border border-secondary rounded-3 d-flex justify-content-center align-items-center h-75"
+                        id="output">
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button onclick="clearOutput(this)"
+                            class="btn btn-light border border-secondary btn-outline-secondary rounded-3 mt-4 mb-4">Clear
+                            Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+<div class="container-fluid mt-5 mt-lg-5 mt-sm-5 mt-md-5">
+    <div class="row">
+        <div class="col text-center text-light py-3" style="background-color: #1d3557;">
+            <p class="mb-0">&copy; 2024. All rights reserved. <b> Made by Muhammad Abdullah .</b></p>
+        </div>
+    </div>
+</div>
+    </footer>
+    <!-- Bootstrap js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Toastify-js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Custom java-script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
